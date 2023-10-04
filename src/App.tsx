@@ -1,4 +1,5 @@
-import { PrimeReactProvider } from "primereact/api";
+import { PrimeReactProvider, addLocale } from "primereact/api";
+import primeLocale from "./locales/prime.json";
 
 import "primereact/resources/themes/md-light-indigo/theme.css"; //theme
 import "primereact/resources/primereact.min.css"; //core css
@@ -9,6 +10,9 @@ import "./App.css";
 import MenuCalendarPage from "./pages/MenuCalendarPage";
 
 const App = () => {
+  const lang = "it";
+  addLocale(lang, primeLocale[lang]);
+  
   return (
     <PrimeReactProvider>
       <MenuCalendarPage />

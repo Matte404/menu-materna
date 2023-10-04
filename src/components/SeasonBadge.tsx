@@ -1,5 +1,5 @@
 import { Tag } from "primereact/tag";
-import { Season } from "../pages/MenuCalendarPage";
+import Season from "../model/SeasonEnum";
 
 interface SeasonBadgeProps {
     season: string

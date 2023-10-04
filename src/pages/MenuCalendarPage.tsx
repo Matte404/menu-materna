@@ -1,37 +1,15 @@
-import { SyntheticEvent, useEffect, useState } from "react";
-import MenuList from "../components/MenuList";
-import { Calendar } from "primereact/calendar";
-import { FormEvent } from "primereact/ts-helpers";
-import menu from "../assets/4w-menu.json";
-import moment from "moment";
-import { addLocale } from "primereact/api";
-import { Card } from "primereact/card";
 
-export enum Season {
-  Winter = "WINTER",
-  Summer = "SUMMER",
-  All = "ALL"
-}
+import { Calendar } from "primereact/calendar";
+import { Card } from "primereact/card";
+import { useMenuJson } from "../hooks/UseMenuJsonHook";
+import MenuList from "../components/MenuList";
+
 
 const MenuCalendarPage = () => {
-  const [date, setDate] = useState(new Date());
-  const [menuItems, setMenuItems] = useState<{name:string,season:string}[]>([]);
+  const { updateMenu, menuItems, date } = useMenuJson(new Date());
 
-  useEffect(() => {
-    loadMenuFromDate(date);
-  }, [])
-
-  addLocale('it', {
-    firstDayOfWeek: 1,
-    dayNames: ['domenica', 'lunedì', 'martedì', 'mercoledì', 'giovedì', 'venerdì', 'sabato'],
-    dayNamesShort: ['dom', 'lun', 'mar', 'mer', 'gio', 'ven', 'sab'],
-    dayNamesMin: ['D', 'L', 'M', 'M', 'G', 'V', 'S'],
-    monthNames: ['gennaio', 'febbraio', 'marzo', 'aprile', 'maggio', 'giugno', 'luglio', 'agosto', 'settembre', 'ottobre', 'novembre', 'dicembre'],
-    monthNamesShort: ['gen', 'feb', 'mar', 'apr', 'mag', 'giu', 'lug', 'ago', 'set', 'ott', 'nov', 'dic'],
-    today: 'Oggi',
-    clear: 'Pulisci',
-  });
-
+  const minDate = new Date("10/4/2023");
+  const maxDate = new Date("6/1/2024");
   const disabledDates = [
     new Date("11/1/2023"),
     new Date("12/8/2023"),
@@ -42,57 +20,22 @@ const MenuCalendarPage = () => {
     new Date("5/1/2024")
   ]
 
-  const minDate = new Date("10/4/2023");
-  const maxDate = new Date("6/1/2024");
-
-
-  const handleDataChange = (
-    { value }: FormEvent<Date, SyntheticEvent<Element, Event>>
-  ): void => {
-
-    loadMenuFromDate(value!);
-    setDate(value!);
-  }
- 
-  const loadMenuFromDate = (d: Date) => {
-    const month = d.getMonth() + 1;
-    const day = d.getDate();
-
-    //winter start first november end 15 april
-    //summer start 16 april end 31 october
-    //calc season
-    var season = month < 4 || month >= 11 || (month == 5 && day <= 15) ? Season.Winter : Season.Summer;
-
-    //calc weeknr and day in the week
-    const momentDate = moment(d);
-    const menuWeekNrIndex = momentDate.week() % 4;
-    const dayOftheweekIndex = momentDate.day() - 1;
-    //get menu
-    var weekMenu = menu[menuWeekNrIndex][dayOftheweekIndex];
-    //filter by season
-    weekMenu = weekMenu.filter(x => x.season == season || x.season == Season.All); 
-
-    //set state
-    setMenuItems(weekMenu);
-  }
-
   return (
     <div className="flex flex-row  justify-content-center">
       <Card title="Menu materna solari 2023/2024" className="p-5 w-12 md:w-8 lg:w-5">
         <Calendar
           value={date}
           dateFormat="dd/mm/yy"
-          onChange={handleDataChange}
+          onChange={(e) => updateMenu(e.value!)}
           disabledDays={[0, 6]}
           disabledDates={disabledDates}
           minDate={minDate}
           maxDate={maxDate}
           locale="it"
         ></Calendar>
-        <div className="mt-5">
-          <MenuList menu={menuItems} />
-        </div>
-      </Card></div>
+        <MenuList menu={menuItems} className="mt-5" />
+      </Card>
+    </div>
 
   );
 };
