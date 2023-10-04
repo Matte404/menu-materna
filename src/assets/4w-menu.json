@@ -1,0 +1,478 @@
+[
+    [
+        [
+            {
+                "name": "Pasta all’olio extra vergine di oliva",
+                "season": "ALL"
+            },
+            {
+                "name": "Polpettine di piselli",
+                "season": "ALL"
+            },
+            {
+                "name": "Insalata verde e mais",
+                "season": "ALL"
+            },
+            {
+                "name": "Pane",
+                "season": "ALL"
+            },
+            {
+                "name": "Frutta fresca di stagione",
+                "season": "ALL"
+            }
+        ],
+        [
+            {
+                "name": "Pasta al pesto",
+                "season": "ALL"
+            },
+            {
+                "name": "Filetti di merluzzo al verde con olive e capperi",
+                "season": "ALL"
+            },
+            {
+                "name": "Patate lessate",
+                "season": "ALL"
+            },
+            {
+                "name": "Pane",
+                "season": "ALL"
+            },
+            {
+                "name": "Frutta fresca di stagione",
+                "season": "ALL"
+            }
+        ],
+        [
+            {
+                "name": "Pizza margherita",
+                "season": "ALL"
+            },
+            {
+                "name": "Prosciutto cotto",
+                "season": "ALL"
+            },
+            {
+                "name": "Finocchi in insalata",
+                "season": "WINTER"
+            },
+            {
+                "name": "Pomodori in insalata",
+                "season": "SUMMER"
+            },
+            {
+                "name": "Pane",
+                "season": "ALL"
+            },
+            {
+                "name": "Frutta fresca di stagione",
+                "season": "ALL"
+            }
+        ],
+        [
+            {
+                "name": "Vellutata di zucca con riso",
+                "season": "WINTER"
+            },
+            {
+                "name": "Vellutata di zucchine con riso",
+                "season": "SUMMER"
+            },
+            {
+                "name": "Carne di vitellone all’uccelletto",
+                "season": "ALL"
+            },
+            {
+                "name": "Carote in insalata",
+                "season": "ALL"
+            },
+            {
+                "name": "Pane",
+                "season": "ALL"
+            },
+            {
+                "name": "Frutta fresca di stagione",
+                "season": "ALL"
+            }
+        ],
+        [
+            {
+                "name": "Pasta al sugo di pomodoro",
+                "season": "ALL"
+            },
+            {
+                "name": "Sformato di verdure",
+                "season": "ALL"
+            },
+            {
+                "name": "Insalata verde",
+                "season": "ALL"
+            },
+            {
+                "name": "Pane",
+                "season": "ALL"
+            },
+            {
+                "name": "Frutta fresca di stagione",
+                "season": "ALL"
+            }
+        ]
+    ],
+    [
+        [
+            {
+                "name": "Minestra di verdure con farro",
+                "season": "ALL"
+            },
+            {
+                "name": "Coscia di pollo al forno",
+                "season": "ALL"
+            },
+            {
+                "name": "Carote in insalata",
+                "season": "ALL"
+            },
+            {
+                "name": "Pane",
+                "season": "ALL"
+            },
+            {
+                "name": "Frutta fresca di stagione",
+                "season": "ALL"
+            }
+        ],
+        [
+            {
+                "name": "Risotto allo zafferano",
+                "season": "ALL"
+            },
+            {
+                "name": "Filetti di merluzzo gratinati",
+                "season": "ALL"
+            },
+            {
+                "name": "Finocchi in insalata",
+                "season": "WINTER"
+            },
+            {
+                "name": "Pomodori in insalata",
+                "season": "SUMMER"
+            },
+            {
+                "name": "Pane",
+                "season": "ALL"
+            },
+            {
+                "name": "Frutta fresca di stagione",
+                "season": "ALL"
+            }
+        ],
+        [
+            {
+                "name": "Pasta all’olio extravergine di oliva",
+                "season": "ALL"
+            },
+            {
+                "name": "Bocconcini di lonza alle mele",
+                "season": "ALL"
+            },
+            {
+                "name": "Purea di patate",
+                "season": "ALL"
+            },
+            {
+                "name": "Pane",
+                "season": "ALL"
+            },
+            {
+                "name": "Mousse di frutta",
+                "season": "ALL"
+            }
+        ],
+        [
+            {
+                "name": "Pasta al ragù di vitellone",
+                "season": "ALL"
+            },
+            {
+                "name": "Parmigiano reggiano",
+                "season": "ALL"
+            },
+            {
+                "name": "Fagiolini saltati",
+                "season": "WINTER"
+            },
+            {
+                "name": "Zucchine trifolate",
+                "season": "SUMMER"
+            },
+            {
+                "name": "Pane",
+                "season": "ALL"
+            },
+            {
+                "name": "Frutta fresca di stagione",
+                "season": "ALL"
+            }
+        ],
+        [
+            {
+                "name": "Pasta al pesto",
+                "season": "ALL"
+            },
+            {
+                "name": "Hamburger vegetale",
+                "season": "ALL"
+            },
+            {
+                "name": "Insalata verde e mais",
+                "season": "ALL"
+            },
+            {
+                "name": "Pane",
+                "season": "ALL"
+            },
+            {
+                "name": "Frutta fresca di stagione",
+                "season": "ALL"
+            }
+        ]
+    ],
+    [
+        [
+            {
+                "name": "Riso al sugo di pomodoro",
+                "season": "ALL"
+            },
+            {
+                "name": "Polpettone di fagiolini",
+                "season": "ALL"
+            },
+            {
+                "name": "Insalata mista (verde, carote e olive verdi)",
+                "season": "ALL"
+            },
+            {
+                "name": "Pane",
+                "season": "ALL"
+            },
+            {
+                "name": "Frutta fresca di stagione",
+                "season": "ALL"
+            }
+        ],
+        [
+            {
+                "name": "Minestra di verdure con orzetti",
+                "season": "WINTER"
+            },
+            {
+                "name": "Minestra primavera con orzetti",
+                "season": "SUMMER"
+            },
+            {
+                "name": "Pizza margherita",
+                "season": "WINTER"
+            },
+            {
+                "name": "Mozzarella",
+                "season": "SUMMER"
+            },
+            {
+                "name": "Pomodori in insalata",
+                "season": "SUMMER"
+            },
+            {
+                "name": "Pane",
+                "season": "ALL"
+            },
+            {
+                "name": "Frutta fresca di stagione",
+                "season": "ALL"
+            }
+        ],
+        [
+            {
+                "name": "Pansotti o ravioli di magro burro e salvia",
+                "season": "ALL"
+            },
+            {
+                "name": "Bocconcini di pollo con olive e pinoli",
+                "season": "ALL"
+            },
+            {
+                "name": "Bietole con parmigiano",
+                "season": "ALL"
+            },
+            {
+                "name": "Pane",
+                "season": "ALL"
+            },
+            {
+                "name": "Frutta fresca di stagione",
+                "season": "ALL"
+            }
+        ],
+        [
+            {
+                "name": "Pasta al pesto",
+                "season": "ALL"
+            },
+            {
+                "name": "Arrosto di lonza",
+                "season": "ALL"
+            },
+            {
+                "name": "Patate al forno",
+                "season": "ALL"
+            },
+            {
+                "name": "Pane",
+                "season": "ALL"
+            },
+            {
+                "name": "Frutta fresca di stagione",
+                "season": "ALL"
+            }
+        ],
+        [
+            {
+                "name": "Pasta all’olio extravergine di oliva",
+                "season": "ALL"
+            },
+            {
+                "name": "Crocchette di pesce",
+                "season": "ALL"
+            },
+            {
+                "name": "Carote in insalata",
+                "season": "ALL"
+            },
+            {
+                "name": "Pane",
+                "season": "ALL"
+            },
+            {
+                "name": "Frutta di stagione",
+                "season": "ALL"
+            }
+        ]
+    ],
+    [
+        [
+            {
+                "name": "Pasta al sugo di pomodoro",
+                "season": "ALL"
+            },
+            {
+                "name": "Formaggio Asiago o Stracchino",
+                "season": "WINTER"
+            },
+            {
+                "name": "Mozzarella",
+                "season": "SUMMER"
+            },
+            {
+                "name": "Fagiolini saltati",
+                "season": "WINTER"
+            },
+            {
+                "name": "Pomodori in insalata",
+                "season": "SUMMER"
+            },
+            {
+                "name": "Pane",
+                "season": "ALL"
+            },
+            {
+                "name": "Frutta fresca di stagione",
+                "season": "ALL"
+            }
+        ],
+        [
+            {
+                "name": "Crema di piselli o fagioli cannellini con crostini",
+                "season": "WINTER"
+            },
+            {
+                "name": "Minestra primavera con riso",
+                "season": "SUMMER"
+            },
+            {
+                "name": "Polpette di vitellone",
+                "season": "ALL"
+            },
+            {
+                "name": "Insalata verde",
+                "season": "ALL"
+            },
+            {
+                "name": "Frutta fresca di stagione",
+                "season": "ALL"
+            }
+        ],
+        [
+            {
+                "name": "Pasta al pesto",
+                "season": "ALL"
+            },
+            {
+                "name": "Filetti di merluzzo impanati",
+                "season": "ALL"
+            },
+            {
+                "name": "Carote in insalata",
+                "season": "ALL"
+            },
+            {
+                "name": "Pane",
+                "season": "ALL"
+            },
+            {
+                "name": "Frutta fresca di stagione",
+                "season": "ALL"
+            }
+        ],
+        [
+            {
+                "name": "Risotto allo zafferano",
+                "season": "ALL"
+            },
+            {
+                "name": "Bocconcini di tacchino gratinati",
+                "season": "ALL"
+            },
+            {
+                "name": "Insalata verde e mais",
+                "season": "ALL"
+            },
+            {
+                "name": "Pane",
+                "season": "ALL"
+            },
+            {
+                "name": "Frutta fresca di stagione",
+                "season": "ALL"
+            }
+        ],
+        [
+            {
+                "name": "Pasta all’olio extravergine di oliva",
+                "season": "ALL"
+            },
+            {
+                "name": "Torta pasqualina",
+                "season": "ALL"
+            },
+            {
+                "name": "Pane",
+                "season": "ALL"
+            },
+            {
+                "name": "Budino al cioccolato",
+                "season": "ALL"
+            }
+        ]
+    ]
+]
