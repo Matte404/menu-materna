@@ -3,11 +3,11 @@ import primeLocale from "./locales/prime.json";
 
 import "primereact/resources/themes/md-light-indigo/theme.css"; //theme
 import "primereact/resources/primereact.min.css"; //core css
-// import "primeicons/primeicons.css"; //icons
+import "primeicons/primeicons.css"; //icons
 import "primeflex/primeflex.css"; // flex
 
-import "./App.css";
-import MenuCalendarPage from "./pages/MenuCalendarPage";
+import "./App.css"; 
+import { MenuCalendarPage } from "./pages/MenuCalendarPage";
 
 const App = () => {
   const lang = "it";

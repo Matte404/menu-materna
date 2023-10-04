@@ -28,6 +28,13 @@ export const useMenuJson = (d: Date) => {
         const momentDate = moment(d);
         const menuWeekNrIndex = momentDate.week() % 4;
         const dayOftheweekIndex = momentDate.day() - 1;
+
+        if(dayOftheweekIndex < 0 || dayOftheweekIndex > 4)
+        {
+            setMenuItems([]);
+            return;
+        }
+        
         //get menu
         var weekMenu = menu[menuWeekNrIndex][dayOftheweekIndex];
         //filter by season
