@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import moment from "moment";
 import menu from "../assets/4w-menu.json";
 import Season from "../model/SeasonEnum";
+import Meal from "../model/Meal";
 
 
 export const useMenuJson = (d: Date) => {
