@@ -5,13 +5,11 @@ interface MenuListProps {
 const MenuList = ({ menu }: MenuListProps) => {
   return (
     <>
-      <ul>
-        {menu.map((item, index) => (
-          <li key={index} style={{ listStyleType: "none" }}>
-            {item}
-          </li>
-        ))}
-      </ul>
+      {menu.map((item, index) => (
+        <p key={index} className="text-left">
+           {item}
+        </p>
+      ))}
     </>
   );
 };
