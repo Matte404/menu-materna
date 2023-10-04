@@ -7,9 +7,15 @@ import moment from "moment";
 import { addLocale } from "primereact/api";
 import { Card } from "primereact/card";
 
+export enum Season {
+  Winter = "WINTER",
+  Summer = "SUMMER",
+  All = "ALL"
+}
+
 const MenuCalendarPage = () => {
   const [date, setDate] = useState(new Date());
-  const [menuItems, setMenuItems] = useState<string[]>([]);
+  const [menuItems, setMenuItems] = useState<{name:string,season:string}[]>([]);
 
   useEffect(() => {
     loadMenuFromDate(date);
@@ -47,19 +53,27 @@ const MenuCalendarPage = () => {
     loadMenuFromDate(value!);
     setDate(value!);
   }
+ 
+  const loadMenuFromDate = (d: Date) => {
+    const month = d.getMonth() + 1;
+    const day = d.getDate();
 
-  const loadMenuFromDate = (date: Date) => {
+    //winter start first november end 15 april
+    //summer start 16 april end 31 october
+    //calc season
+    var season = month < 4 || month >= 11 || (month == 5 && day <= 15) ? Season.Winter : Season.Summer;
+
     //calc weeknr and day in the week
-    const momentDate = moment(date);
+    const momentDate = moment(d);
     const menuWeekNrIndex = momentDate.week() % 4;
     const dayOftheweekIndex = momentDate.day() - 1;
     //get menu
     var weekMenu = menu[menuWeekNrIndex][dayOftheweekIndex];
-
-    // TODO: filter season
+    //filter by season
+    weekMenu = weekMenu.filter(x => x.season == season || x.season == Season.All); 
 
     //set state
-    setMenuItems(weekMenu.map(x => x.name));
+    setMenuItems(weekMenu);
   }
 
   return (
@@ -84,3 +98,5 @@ const MenuCalendarPage = () => {
 };
 
 export default MenuCalendarPage;
+
+

@@ -1,13 +1,15 @@
+import SeasonBadge from "./SeasonBadge";
+
 interface MenuListProps {
-  menu: string[];
-}
+  menu: { name: string, season: string }[]
+}; 
 
 const MenuList = ({ menu }: MenuListProps) => {
   return (
     <>
       {menu.map((item, index) => (
         <p key={index} className="text-left">
-           {item}
+          {item.name} <SeasonBadge season={item.season} />
         </p>
       ))}
     </>
