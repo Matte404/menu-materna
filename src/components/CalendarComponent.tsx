@@ -38,8 +38,8 @@ const CalendarComponent = ({ value, onChange }: CalendarComponentProps) => {
     }
 
     return <>
-        <div className="flex flex-row justify-content-around align-items-center">
-            <i className="pi pi-backward cursor-pointer" style={{ fontSize: '1.5rem' }} onClick={() => addDays(-1)}></i>
+        <div className="flex flex-row justify-content-between align-items-center">
+            <i className="pi pi-backward cursor-pointer mr-2" style={{ fontSize: '1.5rem' }} onClick={() => addDays(-1)}></i>
             <Calendar
                 value={value}
                 dateFormat="dd/mm/yy"
@@ -50,7 +50,7 @@ const CalendarComponent = ({ value, onChange }: CalendarComponentProps) => {
                 maxDate={maxDate}
                 locale="it"
             ></Calendar>
-            <i className="pi pi-forward cursor-pointer" style={{ fontSize: '1.5rem' }} onClick={() => addDays(1)}></i>
+            <i className="pi pi-forward cursor-pointer ml-2" style={{ fontSize: '1.5rem' }} onClick={() => addDays(1)}></i>
         </div></>
 }
 
