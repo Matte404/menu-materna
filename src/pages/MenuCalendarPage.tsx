@@ -15,7 +15,7 @@ export const MenuCalendarPage = () => {
     "4/25/2024",
     "5/1/2024",
   ].map((x) => new Date(x));
-  const disabledWeekDaysIndex = [0, 6, 2, 3];
+  const disabledWeekDaysIndex = [0, 6];
 
   const { updateMenu, menuItems, date } = useMenuJson({
     date: new Date(), // default date today
