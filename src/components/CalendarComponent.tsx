@@ -1,57 +1,54 @@
 import moment from "moment";
-import { Calendar } from "primereact/calendar"
+import { Calendar } from "primereact/calendar";
 
 interface CalendarComponentProps {
-    value: Date,
-    onChange: (e: Date) => void
+  selectedDate: Date;
+  minDate: Date;
+  maxDate: Date;
+  disabledDates: Date[];
+  disabledWeekDaysIndex: number[];
+  onChange: (e: Date) => void;
 }
 
-const CalendarComponent = ({ value, onChange }: CalendarComponentProps) => {
+const CalendarComponent = ({
+  selectedDate,
+  minDate,
+  maxDate,
+  disabledDates,
+  disabledWeekDaysIndex,
+  onChange,
+}: CalendarComponentProps) => {
+  const addDays = (n: number): void => {
+    const increasedDate = new Date(selectedDate.getTime() + n * 86400000); //1 day in milliseconds
+    onChange(increasedDate);
+  };
 
-    const minDate = new Date("10/4/2023");
-    const maxDate = new Date("6/1/2024");
-    const disabledDates = [
-        new Date("11/1/2023"),
-        new Date("12/8/2023"),
-        new Date("12/25/2023"),
-        new Date("12/26/2023"),
-        new Date("1/1/2024"),
-        new Date("4/25/2024"),
-        new Date("5/1/2024")
-    ];
-
-    const addDays = (n: number): void => {
-        var increasedDate = new Date(value.getTime() + (n * 86400000));
-
-        if (increasedDate < minDate || increasedDate > maxDate)
-            return;
-        const dayNr = moment(increasedDate).day();
-        console.log(dayNr)
-        if (
-            dayNr > 5 ||
-            dayNr == 0 ||
-            disabledDates.map(x => x.getTime()).includes(increasedDate.getTime())
-        )
-            addDays(n < 0 ? n - 1 : n + 1);
-        else
-            onChange(increasedDate);
-    }
-
-    return <>
-        <div className="flex flex-row justify-content-between align-items-center">
-            <i className="pi pi-backward cursor-pointer mr-2" style={{ fontSize: '1.5rem' }} onClick={() => addDays(-1)}></i>
-            <Calendar
-                value={value}
-                dateFormat="dd/mm/yy"
-                onChange={(e) => onChange(e.value!)}
-                disabledDays={[0, 6]}
-                disabledDates={disabledDates}
-                minDate={minDate}
-                maxDate={maxDate}
-                locale="it"
-            ></Calendar>
-            <i className="pi pi-forward cursor-pointer ml-2" style={{ fontSize: '1.5rem' }} onClick={() => addDays(1)}></i>
-        </div></>
-}
+  return (
+    <>
+      <div className="flex flex-row justify-content-between align-items-center">
+        <i
+          className="pi pi-backward cursor-pointer mr-2"
+          style={{ fontSize: "1.5rem" }}
+          onClick={() => addDays(-1)}
+        ></i>
+        <Calendar
+          value={selectedDate}
+          dateFormat="dd MM yy (DD)"
+          onChange={(e) => onChange(e.value!)}
+          disabledDays={disabledWeekDaysIndex}
+          disabledDates={disabledDates}
+          minDate={minDate}
+          maxDate={maxDate}
+          locale="it"
+        ></Calendar>
+        <i
+          className="pi pi-forward cursor-pointer ml-2"
+          style={{ fontSize: "1.5rem" }}
+          onClick={() => addDays(1)}
+        ></i>
+      </div>
+    </>
+  );
+};
 
 export default CalendarComponent;

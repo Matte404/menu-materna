@@ -2,9 +2,9 @@ import Meal from "../model/Meal";
 import SeasonBadge from "./SeasonBadge";
 
 interface MenuListProps {
-  menu: Meal[],
-  className?: string
-};
+  menu: Meal[];
+  className?: string;
+}
 
 const MenuList = ({ menu, className }: MenuListProps) => {
   return (
