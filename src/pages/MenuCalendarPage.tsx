@@ -1,7 +1,8 @@
 import { Card } from "primereact/card";
-import { useMenuJson } from "../hooks/UseMenuJsonHook";
 import MenuList from "../components/MenuList";
 import CalendarComponent from "../components/CalendarComponent";
+import { useMenuState } from "../state/MenuState";
+import { useEffect } from "react";
 
 export const MenuCalendarPage = () => {
   const minDate = new Date("10/4/2023");
@@ -15,19 +16,26 @@ export const MenuCalendarPage = () => {
     "4/25/2024",
     "5/1/2024",
   ].map((x) => new Date(x));
-  const disabledWeekDaysIndex = [0, 6];
 
-  const { updateMenu, menuItems, date } = useMenuJson({
-    date: new Date(), // default date today
-    minDate,
-    maxDate,
-    disabledDates,
+  const {
+    initialized,
+    day,
     disabledWeekDaysIndex,
-  });
+    menuItems,
+    initialize,
+    setDate,
+  } = useMenuState((state) => state);
+
+  useEffect(() => {
+    initialize({ minDate, maxDate, disabledDates });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   function handleCalendarChangeDate(x: Date): void {
-    updateMenu(x);
+    setDate(x);
   }
+
+  if (initialized === false) return <div>Loading...</div>;
 
   return (
     <div className="flex flex-row  justify-content-center ">
@@ -36,7 +44,7 @@ export const MenuCalendarPage = () => {
         className="p-5 w-12 md:w-8 lg:w-5 shadow-8"
       >
         <CalendarComponent
-          selectedDate={date}
+          selectedDate={day}
           minDate={minDate}
           maxDate={maxDate}
           disabledDates={disabledDates}
