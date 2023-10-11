@@ -6,6 +6,8 @@ import menu from "../assets/4w-menu.json";
 import Season from '../model/SeasonEnum';
 import { devtools } from 'zustand/middleware';
 
+const production = process.env.NODE_ENV === 'production' ? true : false;
+
 type MenuState = {
     day: Date;
     menuItems: Meal[];
@@ -38,7 +40,7 @@ export const useMenuState = create<MenuState & MenuActions>()(devtools((set) => 
         newState.menuItems = updateMenu(newState.day); // get menu from json
 
         return newState;
-    }, false, `menustate/initialize`),
+    }, false, `initialize`),
 
     setDate: (date: Date) => set((state) => {
         if (!state.initialized) throw new Error('MenuState not initialized');
@@ -51,9 +53,9 @@ export const useMenuState = create<MenuState & MenuActions>()(devtools((set) => 
             day: newDate,
             menuItems: updateMenu(newDate) //get menu from json
         }
-    }, false, `menustate/setDate`)
+    }, false, `setDate`)
 
-})));
+}), { name: "menu-state", enabled: !production, log: !production }));
 
 const checkAndFixDate = (newDate: Date, state: MenuState): Date => {
 
