@@ -4,6 +4,7 @@ import moment from 'moment';
 
 import menu from "../assets/4w-menu.json";
 import Season from '../model/SeasonEnum';
+import { devtools } from 'zustand/middleware';
 
 type MenuState = {
     day: Date;
@@ -20,13 +21,13 @@ type MenuActions = {
     setDate: (date: Date) => void;
 };
 
-export const useMenuState = create<MenuState & MenuActions>((set) => ({
+export const useMenuState = create<MenuState & MenuActions>()(devtools((set) => ({
     day: new Date(),
     menuItems: [],
     minDate: new Date(-8640000000000000),
     maxDate: new Date(8640000000000000),
     disabledDates: [],
-    disabledWeekDaysIndex: [],
+    disabledWeekDaysIndex: [0, 6],
     initialized: false,
 
     initialize: (initialValue: Partial<MenuState>) => set((state) => {
@@ -37,7 +38,7 @@ export const useMenuState = create<MenuState & MenuActions>((set) => ({
         newState.menuItems = updateMenu(newState.day); // get menu from json
 
         return newState;
-    }),
+    }, false, `menustate/initialize`),
 
     setDate: (date: Date) => set((state) => {
         if (!state.initialized) throw new Error('MenuState not initialized');
@@ -50,8 +51,9 @@ export const useMenuState = create<MenuState & MenuActions>((set) => ({
             day: newDate,
             menuItems: updateMenu(newDate) //get menu from json
         }
-    })
-}));
+    }, false, `menustate/setDate`)
+
+})));
 
 const checkAndFixDate = (newDate: Date, state: MenuState): Date => {
 

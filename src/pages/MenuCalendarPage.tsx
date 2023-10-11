@@ -1,4 +1,5 @@
 import { Card } from "primereact/card";
+import { ProgressSpinner } from "primereact/progressspinner";
 import MenuList from "../components/MenuList";
 import CalendarComponent from "../components/CalendarComponent";
 import { useMenuState } from "../state/MenuState";
@@ -35,12 +36,17 @@ export const MenuCalendarPage = () => {
     setDate(x);
   }
 
-  if (initialized === false) return <div>Loading...</div>;
+  if (initialized === false)
+    return (
+      <div className="card flex justify-content-center">
+        <ProgressSpinner />
+      </div>
+    );
 
   return (
     <div className="flex flex-row  justify-content-center ">
       <Card
-        title="Menu materna solari 2023/2024"
+        title="Menu materna 2023/2024"
         className="p-5 w-12 md:w-8 lg:w-5 shadow-8"
       >
         <CalendarComponent
