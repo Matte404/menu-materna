@@ -38,27 +38,32 @@ export const MenuCalendarPage = () => {
 
   if (initialized === false)
     return (
-      <div className="card flex justify-content-center">
+      <div className="card flex justify-content-center mt-4">
         <ProgressSpinner />
       </div>
     );
 
   return (
-    <div className="flex flex-row  justify-content-center ">
-      <Card
-        title="Menu materna 2023/2024"
-        className="p-5 w-12 md:w-8 lg:w-5 shadow-8"
-      >
-        <CalendarComponent
-          selectedDate={day}
-          minDate={minDate}
-          maxDate={maxDate}
-          disabledDates={disabledDates}
-          disabledWeekDaysIndex={disabledWeekDaysIndex}
-          onChange={(x) => handleCalendarChangeDate(x)}
-        />
-        <MenuList menu={menuItems} className="mt-5" />
-      </Card>
+    <div
+      className=" bg-center w-screen h-screen"
+      style={{ backgroundImage: "url(./background.png)" }}
+    >
+      <div className="flex flex-row  justify-content-center  ">
+        <Card
+          title="Menu materna 2023/2024"
+          className="p-5 w-12 md:w-8 lg:w-5 shadow-8 my-4 mx-2 border-round-xl"
+        >
+          <CalendarComponent
+            selectedDate={day}
+            minDate={minDate}
+            maxDate={maxDate}
+            disabledDates={disabledDates}
+            disabledWeekDaysIndex={disabledWeekDaysIndex}
+            onChange={(x) => handleCalendarChangeDate(x)}
+          />
+          <MenuList menu={menuItems} className="mt-5" />
+        </Card>
+      </div>
     </div>
   );
 };

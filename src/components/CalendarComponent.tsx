@@ -32,7 +32,7 @@ const CalendarComponent = ({
         ></i>
         <Calendar
           value={selectedDate}
-          dateFormat="dd MM yy (DD)"
+          dateFormat="dd MM yy"
           onChange={(e) => onChange(e.value!)}
           disabledDays={disabledWeekDaysIndex}
           disabledDates={disabledDates}

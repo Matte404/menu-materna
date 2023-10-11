@@ -1,7 +1,7 @@
 import { PrimeReactProvider, addLocale } from "primereact/api";
 import primeLocale from "./locales/prime.json";
 
-import "primereact/resources/themes/md-light-indigo/theme.css"; //theme
+import "primereact/resources/themes/lara-light-teal/theme.css"; //theme
 import "primereact/resources/primereact.min.css"; //core css
 import "primeicons/primeicons.css"; //icons
 import "primeflex/primeflex.css"; // flex
