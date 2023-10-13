@@ -8,7 +8,7 @@ const pwaConfig: Partial<VitePWAOptions> = {
     name: 'Menu Materna 2023/24',
     short_name: 'Menu Materna',
     description: 'Menu scuola materna anno scolastico 2023/2024',
-    theme_color: '#3dff54',
+    theme_color: '#eeffee',
     icons: [
       {
         src: 'pwa-icon/pwa_x192.png',
