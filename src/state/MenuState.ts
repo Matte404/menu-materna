@@ -103,7 +103,7 @@ const updateMenu = (newDate: Date) => {
 
   //calc weekNr and day in the week
   const momentDate = moment(newDate);
-  const menuWeekNrIndex = (momentDate.week() + 2) % 4;
+  const menuWeekNrIndex = momentDate.week() % 4;
   const dayOftheweekIndex = momentDate.day() - 1;
 
   if (dayOftheweekIndex < 0 || dayOftheweekIndex > 4) {
