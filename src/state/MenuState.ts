@@ -89,6 +89,27 @@ const checkAndFixDate = (newDate: Date, state: MenuState): Date => {
   return newDate;
 };
 
+const isWinter = (month: number, day: number, year: number): boolean => {
+  // Get the date of the first Monday in November
+  const firstMondayOfNovember = new Date(year, 10, 1);
+  firstMondayOfNovember.setDate(
+    firstMondayOfNovember.getDate() + ((8 - firstMondayOfNovember.getDay()) % 7)
+  );
+
+  // Get the date of the second Friday in April
+  const secondFridayOfApril = new Date(year, 3, 1);
+  secondFridayOfApril.setDate(
+    secondFridayOfApril.getDate() +
+      ((12 - secondFridayOfApril.getDay() + 7) % 7)
+  );
+
+  // Check if the current date is within the winter range
+  const currentDate = new Date(year, month - 1, day);
+  return (
+    currentDate >= firstMondayOfNovember || currentDate < secondFridayOfApril
+  );
+};
+
 const updateMenu = (newDate: Date) => {
   const month = newDate.getMonth() + 1;
   const day = newDate.getDate();
@@ -96,10 +117,9 @@ const updateMenu = (newDate: Date) => {
   //winter start first november end 15 april
   //summer start 16 april end 31 october
   //calc season
-  const season =
-    month < 4 || month >= 11 || (month == 5 && day <= 15)
-      ? Season.Winter
-      : Season.Summer;
+  const season = isWinter(month, day, newDate.getFullYear())
+    ? Season.Winter
+    : Season.Summer;
 
   //calc weekNr and day in the week
   const momentDate = moment(newDate);
@@ -114,7 +134,7 @@ const updateMenu = (newDate: Date) => {
   let weekMenu = menu[menuWeekNrIndex][dayOftheweekIndex];
   //filter by season
   weekMenu = weekMenu.filter(
-    (x) => x.season == season || x.season == Season.All
+    (x) => x.season == Season.All || x.season == season
   );
 
   return weekMenu;
