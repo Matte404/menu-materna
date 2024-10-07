@@ -3,7 +3,7 @@
     [
       { "name": "Vellutata di zucca con riso", "season": "WINTER" },
       { "name": "Vellutata di zucchine con riso", "season": "SUMMER" },
-      { "name": "Prosciutto cotto senza", "season": "ALL" },
+      { "name": "Prosciutto cotto", "season": "ALL" },
       { "name": "Piselli in umido", "season": "ALL" },
       { "name": "Pane comune", "season": "ALL" },
       { "name": "Frutta fresca di stagione", "season": "ALL" }
