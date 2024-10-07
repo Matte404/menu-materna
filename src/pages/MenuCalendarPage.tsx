@@ -66,7 +66,7 @@ export const MenuCalendarPage = () => {
   return (
     <div
       className=" bg-center w-screen h-screen"
-      style={{ backgroundImage: "url(./background.png)" }}
+      style={{ backgroundImage: "url(./background2425.png)" }}
     >
       <div className="flex flex-row  justify-content-center  ">
         <Card
